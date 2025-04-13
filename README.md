@@ -61,3 +61,33 @@ python main.py
   - 正则化强度：[0.01,0.005,0.001]
   - 激活函数：['ReLU','Sigmoid']
 - 自动记录每组超参数的训练损失、验证损失及准确率。
+### 5.测试评估
+- 测试集评估：计算模型在测试集上的准确率。
+### 6.可视化
+- 超参数对比图：生成不同超参数组合的训练曲线对比图（hyperparam_results.png）。
+- 学习曲线：绘制最佳模型的训练损失、验证损失及验证准确率变化曲线（learning_curves.png）。
+### 7.结果保存
+- 模型权重保存：将最佳模型的参数保存为best_model.npz文件。
+- 结果图表保存：自动生成可视化图表，便于后续分析。
+## 实验结果
+- 输出示例
+```bash
+Training with: {'hidden_size': 256, 'learning_rate': 0.01, 'reg_lambda': 0.01, 'activation': 'relu'}
+Epoch 001/50 | Train Loss: 4.4041 | Val Loss: 4.1193 | Val Acc: 0.4302
+Epoch 002/50 | Train Loss: 3.9789 | Val Loss: 3.8711 | Val Acc: 0.4574
+Epoch 003/50 | Train Loss: 3.7321 | Val Loss: 3.6884 | Val Acc: 0.4660
+...
+Current Best Acc: 0.5470
+```
+## 常见问题
+- 训练时间过长
+减少超参数组合数量
+降低训练轮数（epochs）
+使用更小的隐藏层维度（如128）
+- 测试准确率低
+  - 可能原因：
+过拟合（验证集准确率高但测试集低）
+学习率过大/过小
+  - 解决方法：
+增加正则化强度（reg_lambda）
+调整学习率或隐藏层维度
