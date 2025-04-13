@@ -17,6 +17,7 @@ CIFAR-10 数据集包含：
   - 验证集：5,000
   - 测试集：10,000
 ## 项目结构
+'''text
 cifar10-classifier/
 ├── data_loader.py      # 数据下载与预处理
 ├── model.py           # 神经网络模型定义
@@ -26,6 +27,6 @@ cifar10-classifier/
 ├── visualization.py   # 结果可视化
 └── main.py            # 主程序入口
 ## 安装依赖
-'''bash
+```bash
 pip install numpy scikit-learn matplotlib
-'''
+```
