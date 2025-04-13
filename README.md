@@ -18,14 +18,15 @@ CIFAR-10 数据集包含：
   - 测试集：10,000
 ## 项目结构
 ```text
-cifar10-classifier/
-├── utils.py      # 数据下载与预处理
-├── model.py           # 神经网络模型定义
-├── train.py           # 训练流程控制
-├── test.py            # 测试评估模块
-├── search.py # 超参数搜索
-├── visualize.py   # 结果可视化
-└── main.py            # 主程序入口
+cifar10/
+├── cifar-10-batches-py  # 图像分类数据集
+├── utils.py             # 数据下载与预处理
+├── model.py             # 神经网络模型定义
+├── train.py             # 训练流程控制
+├── test.py              # 测试评估模块
+├── search.py            # 超参数搜索
+├── visualize.py         # 结果可视化
+└── main.py              # 主程序入口
 ```
 ## 安装依赖
 ```bash
@@ -79,6 +80,15 @@ Epoch 003/50 | Train Loss: 3.7321 | Val Loss: 3.6884 | Val Acc: 0.4660
 ...
 Current Best Acc: 0.5470
 ```
+## 模型保存
+最佳模型参数自动保存为best_model.npz：
+```bash
+np.savez('best_model.npz', 
+         W1=best_model.W1, 
+         b1=best_model.b1, 
+         W2=best_model.W2, 
+         b2=best_model.b2)
+```
 ## 常见问题
 ### 训练时间过长
 - 减少超参数组合数量
@@ -91,12 +101,5 @@ Current Best Acc: 0.5470
 - 解决方法：
   - 增加正则化强度（reg_lambda）
   - 调整学习率或隐藏层维度
-## 模型保存
-最佳模型参数自动保存为best_model.npz：
-```bash
-np.savez('best_model.npz', 
-         W1=best_model.W1, 
-         b1=best_model.b1, 
-         W2=best_model.W2, 
-         b2=best_model.b2)
-```
+  
+以上代码已验证可在Python 3.8+环境中运行
