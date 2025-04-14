@@ -20,7 +20,7 @@ def main():
     
     # ==================== 结果可视化 ====================
     print("\nVisualizing results...")
-    plot_results(search_results[:4])  # 显示前4组参数结果
+    plot_results(search_results)  
     plot_learning_curves(
         best_result['train_losses'],
         best_result['val_losses'],

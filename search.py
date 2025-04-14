@@ -4,10 +4,10 @@ import itertools
 
 def hyperparameter_search(X_train, y_train, X_val, y_val):
     param_grid = {
-        'hidden_size': [256,512],
-        'learning_rate': [0.01,0.05],
-        'reg_lambda': [0.01,0.001],
-        'activation': ['relu']
+        'hidden_size': [128,256,512,1024],
+        'learning_rate': [0.1,0.05,0.01,0.005,0.001],
+        'reg_lambda': [0.01,0.005,0.001],
+        'activation': ['relu','sigmoid']
     }
     
     best_acc = 0.0
