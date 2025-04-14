@@ -89,6 +89,11 @@ np.savez('best_model.npz',
          W2=best_model.W2, 
          b2=best_model.b2)
 ```
+## 最佳参数
+```bash
+{'hidden_size': 512, 'learning_rate': 0.01, 'reg_lambda': 0.01, 'activation': 'relu'}
+准确率54.77%
+```
 ## 常见问题
 ### 训练时间过长
 - 减少超参数组合数量
